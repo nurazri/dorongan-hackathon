@@ -1,5 +1,9 @@
 # Possession Lab — final Control v5 submission
 
+Team **Dorongan** — [project description, required installs, setup and technical document](Dorongan.md).
+
+Generated baseline CSVs are rebuilt locally rather than bundled in this source repository. Follow [START-HERE.md](START-HERE.md) to prepare the data, then run `python starter/baseline.py` before using the baseline scorer.
+
 Control v5 is the selected final model. V6 was evaluated and rejected; the viewer and final export remain on v5.
 
 - [START-HERE.md](START-HERE.md): install, regenerate the exact submission, and run the optional viewer.
