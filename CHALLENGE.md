@@ -138,7 +138,7 @@ other games are fine. Full rules in **[RULES.md](RULES.md)**.
 ## Deliverables and scoring
 
 Three things through one form — the possession file, a public code repository, and a short
-technical document. See **[SUBMISSION.md](SUBMISSION.md)**.
+technical document. See **[the organiser’s submission instructions](https://github.com/metrica-sports/more-than-a-hack-2027/blob/main/SUBMISSION.md)**.
 
 The score decides the ranking; the repository and document are what make it mean something. Ranked
 on **`spellF1`**, with **`macroF1`** reported beside it as the first tie-break. Those two disagree

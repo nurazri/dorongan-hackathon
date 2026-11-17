@@ -165,7 +165,7 @@ V5 was frozen before two predeclared validation matches were acquired: J03WPY (1
 | J03WR9, native | 0.5604 | 0.5644 |
 | J03WR9, 35% block-missing | 0.4745 | 0.4831 |
 
-After these results, v6 tested path-based motion estimation and tolerance of 0.08 s neutral interruptions. Three fixed ablations were selected on the same development tuning slice. The combined candidate improved development and synthetic scores but regressed in all four native/block-missing validation comparisons: 0.4931, 0.4243, 0.5089 and 0.4501 respectively. V6 was rejected without retuning on validation results. Those validation matches were reused, not fresh held-out evidence. CONTROL-V6.md documents the experiment.
+After these results, v6 tested path-based motion estimation and tolerance of 0.08 s neutral interruptions. Three fixed ablations were selected on the same development tuning slice. The combined candidate improved development and synthetic scores but regressed in all four native/block-missing validation comparisons: 0.4931, 0.4243, 0.5089 and 0.4501 respectively. V6 was rejected without retuning on validation results. Those validation matches were reused, not fresh held-out evidence. The research implementation remains in `lab/control_v6.py` and `lab/external_control_v6.py`, with machine-readable results in `benchmarks/reports/control-v6/`.
 
 ## Limitations
 
