@@ -1,0 +1,49 @@
+{
+  "model": "possession_control_v5",
+  "parameters": {
+    "control_distance_m": 2.5,
+    "control_advantage_m": 0.75,
+    "control_dwell_s": 0.4,
+    "max_control_ball_speed_mps": 12.0,
+    "close_contact_m": 1.2,
+    "outside_margin_m": 0.3,
+    "outside_dwell_s": 0.2,
+    "motion_window_s": 0.48,
+    "settled_speed_mps": 0.6,
+    "settled_far_distance_m": 3.0,
+    "settled_far_dwell_s": 0.75,
+    "settled_restart_dwell_s": 0.6,
+    "restart_speed_mps": 1.5,
+    "restart_near_m": 4.0,
+    "restart_motion_dwell_s": 0.12,
+    "missing_abstain_s": 2.0
+  },
+  "provenance": {
+    "external_match": "J03WOH",
+    "tuning_array_range": [
+      48596,
+      69424
+    ],
+    "selection_objective": "mean official spellF1 over native and masked35 development tuning; macroF1 tie-break",
+    "candidate_count": 11,
+    "single_parameter_changes_only": true,
+    "selected_candidate": "settled_far_dwell_s=0.75",
+    "development_spell_f1": 0.5081913139087411,
+    "unchanged_v2_development_spell_f1": 0.5004809052333804,
+    "competition_labels_used": false,
+    "validation_matches_used": false,
+    "held_out_matches_used": false,
+    "external_protocol_sha256": "5d740b0dd1b15bc647050e66c7585a8069387ff12b0a7b92821e22b8e8b53810",
+    "source_doi": "10.6084/m9.figshare.28196177.v1",
+    "attribution": {
+      "authors": [
+        "Manuel Bassek",
+        "Robert Rein",
+        "Hendrik Weber",
+        "Daniel Memmert"
+      ],
+      "title": "An integrated dataset of spatiotemporal and event data in elite soccer",
+      "doi": "10.6084/m9.figshare.28196177.v1"
+    }
+  }
+}

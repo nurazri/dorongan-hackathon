@@ -1,0 +1,248 @@
+{
+  "match": "J03WR9",
+  "split": "predeclared validation",
+  "candidate_sha256": "bbfaac6b3c3eb81c2f90562634cfe67945cf2ecb5444f5c797dfcc50098112df",
+  "candidate": {
+    "model": "possession_control_v5",
+    "parameters": {
+      "control_distance_m": 2.5,
+      "control_advantage_m": 0.75,
+      "control_dwell_s": 0.4,
+      "max_control_ball_speed_mps": 12.0,
+      "close_contact_m": 1.2,
+      "outside_margin_m": 0.3,
+      "outside_dwell_s": 0.2,
+      "motion_window_s": 0.48,
+      "settled_speed_mps": 0.6,
+      "settled_far_distance_m": 3.0,
+      "settled_far_dwell_s": 0.75,
+      "settled_restart_dwell_s": 0.6,
+      "restart_speed_mps": 1.5,
+      "restart_near_m": 4.0,
+      "restart_motion_dwell_s": 0.12,
+      "missing_abstain_s": 2.0
+    },
+    "provenance": {
+      "external_match": "J03WOH",
+      "tuning_array_range": [
+        48596,
+        69424
+      ],
+      "selection_objective": "mean official spellF1 over native and masked35 development tuning; macroF1 tie-break",
+      "candidate_count": 11,
+      "single_parameter_changes_only": true,
+      "selected_candidate": "settled_far_dwell_s=0.75",
+      "development_spell_f1": 0.5081913139087411,
+      "unchanged_v2_development_spell_f1": 0.5004809052333804,
+      "competition_labels_used": false,
+      "validation_matches_used": false,
+      "held_out_matches_used": false,
+      "external_protocol_sha256": "5d740b0dd1b15bc647050e66c7585a8069387ff12b0a7b92821e22b8e8b53810",
+      "source_doi": "10.6084/m9.figshare.28196177.v1",
+      "attribution": {
+        "authors": [
+          "Manuel Bassek",
+          "Robert Rein",
+          "Hendrik Weber",
+          "Daniel Memmert"
+        ],
+        "title": "An integrated dataset of spatiotemporal and event data in elite soccer",
+        "doi": "10.6084/m9.figshare.28196177.v1"
+      }
+    }
+  },
+  "audit": {
+    "pitch_m": [
+      105.0,
+      68.0
+    ],
+    "fps": 25,
+    "periods": [
+      [
+        1,
+        0,
+        68353
+      ],
+      [
+        2,
+        68355,
+        146810
+      ]
+    ],
+    "ball_records": 146810,
+    "array_rows_including_period_separators": 146811,
+    "player_frames": 3229820,
+    "player_frames_outside_ball_span": 0,
+    "skipped_team_frames": {},
+    "ball_status_values": {
+      "1": 85316,
+      "0": 61494
+    },
+    "ball_possession_values": {
+      "1": 79435,
+      "2": 67375
+    },
+    "reference_counts": {
+      "H": 53239,
+      "A": 32077,
+      "D": 61494,
+      "X": 1
+    },
+    "ball_observed": 146810,
+    "native_fps_by_period": [
+      25.000023841880648,
+      25.000023841880648
+    ],
+    "feature_fields": [
+      "X",
+      "Y",
+      "TeamId",
+      "GameSection",
+      "N",
+      "pitch dimensions"
+    ],
+    "reference_only_fields": [
+      "BallStatus",
+      "BallPossession"
+    ],
+    "events_used": false,
+    "coordinate_conversion": "center-based metres to normalized 0..1",
+    "missing_ball_rows_inserted": 0
+  },
+  "rows": [
+    {
+      "variant": "native",
+      "model": "baseline_smooth50",
+      "spell_f1": 0.3152046783625731,
+      "macro_f1": 0.4095041914288962,
+      "dead_f1": 0.0,
+      "coverage": 1.0,
+      "transition_f1_12f": 0.07772020725388601,
+      "transition_f1_25f": 0.20984455958549222,
+      "matched_transitions": 81,
+      "true_transitions": 460,
+      "predicted_transitions": 312,
+      "boundary_mae_ms": 594.0740740740741,
+      "signed_latency_ms": -235.55555555555557,
+      "true_possessions": 370,
+      "predicted_possessions": 314,
+      "matched_spells_iou50": 108,
+      "false_spells_iou50": 206,
+      "missed_spells_iou50": 262
+    },
+    {
+      "variant": "native",
+      "model": "experimental_control_v2",
+      "spell_f1": 0.5603576751117734,
+      "macro_f1": 0.8771933923482985,
+      "dead_f1": 0.924213035044839,
+      "coverage": 0.9995844969688713,
+      "transition_f1_12f": 0.49586776859504134,
+      "transition_f1_25f": 0.5997638724911452,
+      "matched_transitions": 254,
+      "true_transitions": 460,
+      "predicted_transitions": 387,
+      "boundary_mae_ms": 229.29133858267713,
+      "signed_latency_ms": -42.51968503937009,
+      "true_possessions": 370,
+      "predicted_possessions": 301,
+      "matched_spells_iou50": 191,
+      "false_spells_iou50": 110,
+      "missed_spells_iou50": 179
+    },
+    {
+      "variant": "native",
+      "model": "possession_control_v5",
+      "spell_f1": 0.5644245142002989,
+      "macro_f1": 0.8818740797935639,
+      "dead_f1": 0.930436888166315,
+      "coverage": 0.9995844969688713,
+      "transition_f1_12f": 0.49940828402366866,
+      "transition_f1_25f": 0.6035502958579881,
+      "matched_transitions": 255,
+      "true_transitions": 460,
+      "predicted_transitions": 385,
+      "boundary_mae_ms": 229.9607843137255,
+      "signed_latency_ms": -40.78431372549019,
+      "true_possessions": 370,
+      "predicted_possessions": 299,
+      "matched_spells_iou50": 192,
+      "false_spells_iou50": 107,
+      "missed_spells_iou50": 178
+    },
+    {
+      "variant": "masked35",
+      "model": "baseline_smooth50",
+      "spell_f1": 0.2557077625570776,
+      "macro_f1": 0.40867265244081435,
+      "dead_f1": 0.028043259557344064,
+      "coverage": 1.0,
+      "transition_f1_12f": 0.10231660231660233,
+      "transition_f1_25f": 0.17567567567567563,
+      "matched_transitions": 91,
+      "true_transitions": 460,
+      "predicted_transitions": 576,
+      "boundary_mae_ms": 477.3626373626374,
+      "signed_latency_ms": -167.9120879120879,
+      "true_possessions": 370,
+      "predicted_possessions": 506,
+      "matched_spells_iou50": 110,
+      "false_spells_iou50": 396,
+      "missed_spells_iou50": 260
+    },
+    {
+      "variant": "masked35",
+      "model": "experimental_control_v2",
+      "spell_f1": 0.4745098039215686,
+      "macro_f1": 0.7973782420607969,
+      "dead_f1": 0.8359129685719844,
+      "coverage": 0.9076697772631293,
+      "transition_f1_12f": 0.3397190293742018,
+      "transition_f1_25f": 0.4597701149425288,
+      "matched_transitions": 180,
+      "true_transitions": 460,
+      "predicted_transitions": 323,
+      "boundary_mae_ms": 279.1111111111111,
+      "signed_latency_ms": 0.4444444444444445,
+      "true_possessions": 370,
+      "predicted_possessions": 242,
+      "matched_spells_iou50": 146,
+      "false_spells_iou50": 96,
+      "missed_spells_iou50": 224
+    },
+    {
+      "variant": "masked35",
+      "model": "possession_control_v5",
+      "spell_f1": 0.48314238952536825,
+      "macro_f1": 0.808530236440823,
+      "dead_f1": 0.8536244971677204,
+      "coverage": 0.9076697772631293,
+      "transition_f1_12f": 0.34693877551020413,
+      "transition_f1_25f": 0.46683673469387754,
+      "matched_transitions": 183,
+      "true_transitions": 460,
+      "predicted_transitions": 324,
+      "boundary_mae_ms": 278.90710382513663,
+      "signed_latency_ms": 4.808743169398907,
+      "true_possessions": 370,
+      "predicted_possessions": 241,
+      "matched_spells_iou50": 148,
+      "false_spells_iou50": 93,
+      "missed_spells_iou50": 222
+    }
+  ],
+  "spell_f1_gains_over_v2": {
+    "native": 0.0040668390885255645,
+    "masked35": 0.008632585603799647
+  },
+  "candidate_nonregressing_on_both_variants": true,
+  "verdict": "Small validation-supported candidate; further match-level confirmation required.",
+  "held_out_matches_opened": false,
+  "competition_ground_truth_used": false,
+  "limitations": [
+    "One validation match, with a team also present in development.",
+    "DFL reference and corrected tracking differ from competition data; scores are not comparable across datasets.",
+    "Masked35 is a synthetic corruption condition, not a second independent match.",
+    "Small gains on a single match do not establish statistical significance or competition improvement."
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "match": "J03WOH",
+  "trials": [
+    {
+      "transition_scale": 0.5,
+      "mean_spell_f1": 0.40876769626769627,
+      "mean_macro_f1": 0.8833543437634707,
+      "variants": {
+        "native": {
+          "spell_f1": 0.45357142857142857,
+          "macro_f1": 0.896959975557755,
+          "dead_f1": 0.9916628966586958,
+          "coverage": 1.0,
+          "transition_f1_12f": 0.41726618705035967,
+          "transition_f1_25f": 0.5611510791366906,
+          "matched_transitions": 39,
+          "true_transitions": 72,
+          "predicted_transitions": 67,
+          "boundary_mae_ms": 311.7948717948718,
+          "signed_latency_ms": 43.07692307692307,
+          "true_possessions": 60,
+          "predicted_possessions": 52
+        },
+        "masked35": {
+          "spell_f1": 0.3639639639639639,
+          "macro_f1": 0.8697487119691863,
+          "dead_f1": 0.9703357737944963,
+          "coverage": 1.0,
+          "transition_f1_12f": 0.2773722627737226,
+          "transition_f1_25f": 0.4233576642335767,
+          "matched_transitions": 29,
+          "true_transitions": 72,
+          "predicted_transitions": 65,
+          "boundary_mae_ms": 348.9655172413793,
+          "signed_latency_ms": 12.413793103448278,
+          "true_possessions": 60,
+          "predicted_possessions": 51
+        }
+      }
+    },
+    {
+      "transition_scale": 1.0,
+      "mean_spell_f1": 0.4300653594771242,
+      "mean_macro_f1": 0.8868237160993887,
+      "variants": {
+        "native": {
+          "spell_f1": 0.4444444444444445,
+          "macro_f1": 0.8990602109787883,
+          "dead_f1": 0.9936536718041704,
+          "coverage": 1.0,
+          "transition_f1_12f": 0.43609022556390975,
+          "transition_f1_25f": 0.5714285714285714,
+          "matched_transitions": 38,
+          "true_transitions": 72,
+          "predicted_transitions": 61,
+          "boundary_mae_ms": 300.0,
+          "signed_latency_ms": 64.21052631578948,
+          "true_possessions": 60,
+          "predicted_possessions": 48
+        },
+        "masked35": {
+          "spell_f1": 0.4156862745098039,
+          "macro_f1": 0.8745872212199891,
+          "dead_f1": 0.9713166540308316,
+          "coverage": 1.0,
+          "transition_f1_12f": 0.3149606299212599,
+          "transition_f1_25f": 0.42519685039370075,
+          "matched_transitions": 27,
+          "true_transitions": 72,
+          "predicted_transitions": 55,
+          "boundary_mae_ms": 291.85185185185185,
+          "signed_latency_ms": -10.37037037037037,
+          "true_possessions": 60,
+          "predicted_possessions": 42
+        }
+      }
+    },
+    {
+      "transition_scale": 2.0,
+      "mean_spell_f1": 0.4317401960784314,
+      "mean_macro_f1": 0.8899995820643256,
+      "variants": {
+        "native": {
+          "spell_f1": 0.45098039215686275,
+          "macro_f1": 0.9021632939036707,
+          "dead_f1": 0.9948132780082988,
+          "coverage": 1.0,
+          "transition_f1_12f": 0.4761904761904762,
+          "transition_f1_25f": 0.5873015873015873,
+          "matched_transitions": 37,
+          "true_transitions": 72,
+          "predicted_transitions": 54,
+          "boundary_mae_ms": 256.2162162162162,
+          "signed_latency_ms": 22.7027027027027,
+          "true_possessions": 60,
+          "predicted_possessions": 42
+        },
+        "masked35": {
+          "spell_f1": 0.4125,
+          "macro_f1": 0.8778358702249807,
+          "dead_f1": 0.9724329792615073,
+          "coverage": 1.0,
+          "transition_f1_12f": 0.3,
+          "transition_f1_25f": 0.4166666666666667,
+          "matched_transitions": 25,
+          "true_transitions": 72,
+          "predicted_transitions": 48,
+          "boundary_mae_ms": 296.00000000000006,
+          "signed_latency_ms": -1.6,
+          "true_possessions": 60,
+          "predicted_possessions": 36
+        }
+      }
+    },
+    {
+      "transition_scale": 4.0,
+      "mean_spell_f1": 0.4385106382978723,
+      "mean_macro_f1": 0.8913205056598306,
+      "variants": {
+        "native": {
+          "spell_f1": 0.45999999999999996,
+          "macro_f1": 0.9039723367472491,
+          "dead_f1": 0.9948132780082988,
+          "coverage": 1.0,
+          "transition_f1_12f": 0.48387096774193544,
+          "transition_f1_25f": 0.596774193548387,
+          "matched_transitions": 37,
+          "true_transitions": 72,
+          "predicted_transitions": 52,
+          "boundary_mae_ms": 256.2162162162162,
+          "signed_latency_ms": 22.7027027027027,
+          "true_possessions": 60,
+          "predicted_possessions": 40
+        },
+        "masked35": {
+          "spell_f1": 0.4170212765957446,
+          "macro_f1": 0.8786686745724119,
+          "dead_f1": 0.9691852038565757,
+          "coverage": 1.0,
+          "transition_f1_12f": 0.28813559322033905,
+          "transition_f1_25f": 0.4067796610169491,
+          "matched_transitions": 24,
+          "true_transitions": 72,
+          "predicted_transitions": 46,
+          "boundary_mae_ms": 305.0,
+          "signed_latency_ms": 1.6666666666666665,
+          "true_possessions": 60,
+          "predicted_possessions": 34
+        }
+      }
+    }
+  ],
+  "selected": {
+    "transition_scale": 4.0,
+    "mean_spell_f1": 0.4385106382978723,
+    "mean_macro_f1": 0.8913205056598306,
+    "variants": {
+      "native": {
+        "spell_f1": 0.45999999999999996,
+        "macro_f1": 0.9039723367472491,
+        "dead_f1": 0.9948132780082988,
+        "coverage": 1.0,
+        "transition_f1_12f": 0.48387096774193544,
+        "transition_f1_25f": 0.596774193548387,
+        "matched_transitions": 37,
+        "true_transitions": 72,
+        "predicted_transitions": 52,
+        "boundary_mae_ms": 256.2162162162162,
+        "signed_latency_ms": 22.7027027027027,
+        "true_possessions": 60,
+        "predicted_possessions": 40
+      },
+      "masked35": {
+        "spell_f1": 0.4170212765957446,
+        "macro_f1": 0.8786686745724119,
+        "dead_f1": 0.9691852038565757,
+        "coverage": 1.0,
+        "transition_f1_12f": 0.28813559322033905,
+        "transition_f1_25f": 0.4067796610169491,
+        "matched_transitions": 24,
+        "true_transitions": 72,
+        "predicted_transitions": 46,
+        "boundary_mae_ms": 305.0,
+        "signed_latency_ms": 1.6666666666666665,
+        "true_possessions": 60,
+        "predicted_possessions": 34
+      }
+    }
+  },
+  "note": "First-half development selection only. Second half not read for selection."
+}

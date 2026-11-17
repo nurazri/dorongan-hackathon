@@ -1,0 +1,42 @@
+{
+  "model": "possession_control_v6",
+  "parameters": {
+    "control_distance_m": 2.5,
+    "control_advantage_m": 0.75,
+    "control_dwell_s": 0.4,
+    "max_control_ball_speed_mps": 12.0,
+    "close_contact_m": 1.2,
+    "outside_margin_m": 0.3,
+    "outside_dwell_s": 0.2,
+    "motion_window_s": 0.48,
+    "settled_speed_mps": 0.6,
+    "settled_far_distance_m": 3.0,
+    "settled_far_dwell_s": 0.75,
+    "settled_restart_dwell_s": 0.6,
+    "restart_speed_mps": 1.5,
+    "restart_near_m": 4.0,
+    "restart_motion_dwell_s": 0.12,
+    "missing_abstain_s": 2.0
+  },
+  "strategy": {
+    "path_motion": true,
+    "neutral_tolerance_s": 0.08
+  },
+  "provenance": {
+    "development_match": "J03WOH",
+    "tuning_array_range": [
+      48596,
+      69424
+    ],
+    "selected_ablation": "combined",
+    "candidate_count": 3,
+    "v5_control_included": true,
+    "selection_objective": "mean official spellF1 over native and masked35; macroF1 tie-break",
+    "competition_labels_used": false,
+    "validation_matches_used_for_selection": false,
+    "held_out_matches_used": false,
+    "existing_validation_results_seen_before_v6_design": true,
+    "source_sha256": "8ab3bbadcea2046bf2a9e1b0cde7f885124234eafbd07833c0cec22d58d365ff",
+    "development_gain_over_v5": 0.02117556773355156
+  }
+}

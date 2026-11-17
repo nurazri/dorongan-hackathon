@@ -1,0 +1,108 @@
+<main>
+  <header class="topbar">
+    <div class="identity">
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div>
+        <h1>More Than a Hack <span>2027</span></h1>
+        <p class="subtitle">Dorongan Posession Detection</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <a class="export" [href]="exportUrl()" download="dorongan.csv">Export CSV <span aria-hidden="true">↓</span></a>
+    </div>
+  </header>
+
+  @if(error()){<div class="error" role="alert"><span>{{error()}}</span> <button (click)="loadWindow(frame())">Retry</button></div>}
+
+  @if(summary(); as s){
+  <section class="workspace" aria-label="Possession workspace">
+    <section class="panel player-panel" #player aria-label="Match player">
+    <div class="visuals">
+
+      <section class="video-panel" aria-label="Tactical feed">
+        <div class="panel-head">
+          <h2>Tactical feed</h2>
+          <span class="fixture"><b class="side home-text">Barcelona</b> vs <b class="side away-text">Athletic Club</b></span>
+        </div>
+        <div class="video-stage">
+          <video #video src="/media/tactical.mp4" preload="metadata" playsinline (loadedmetadata)="videoReady()" (timeupdate)="videoTime()" (seeked)="videoTime()" (play)="playing.set(true)" (pause)="playing.set(false)" (error)="error.set('Cannot play the tactical video. Check local_paths.json and browser codec support.')"></video>
+        </div>
+      </section>
+
+      <section class="pitch-panel" aria-label="Tracking view">
+        <div class="panel-head">
+          <h2>Tracking view</h2>
+        </div>
+        <div class="pitch-wrap">
+          <svg viewBox="-3 -3 111.3 74" role="img" aria-label="Player and ball positions">
+            <rect x="0" y="0" width="105.3" height="68" rx=".6" class="grass"/>
+            <g class="stripes"><rect x="10.53" width="10.53" height="68"/><rect x="31.59" width="10.53" height="68"/><rect x="52.65" width="10.53" height="68"/><rect x="73.71" width="10.53" height="68"/><rect x="94.77" width="10.53" height="68"/></g>
+            <g class="pitch-lines">
+              <rect x="0" y="0" width="105.3" height="68"/>
+              <path d="M52.65 0V68"/>
+              <circle cx="52.65" cy="34" r="9.15"/>
+              <path d="M0 13.84H16.5V54.16H0 M105.3 13.84H88.8V54.16H105.3 M0 24.84H5.5V43.16H0 M105.3 24.84H99.8V43.16H105.3"/>
+              <path d="M16.5 26.69A9.15 9.15 0 0 1 16.5 41.31 M88.8 26.69A9.15 9.15 0 0 0 88.8 41.31"/>
+              <path d="M0 30.34H-1.8V37.66H0 M105.3 30.34H107.1V37.66H105.3"/>
+            </g>
+            <g class="spots"><circle cx="52.65" cy="34" r=".4"/><circle cx="11" cy="34" r=".35"/><circle cx="94.3" cy="34" r=".35"/></g>
+            @if(row(); as r){
+              @for(p of r.players; track p.slot){
+                <circle [attr.cx]="p.x*105.3" [attr.cy]="p.y*68" r="1.25" [class]="p.team===0 ? 'player home' : 'player away'"><title>Track {{p.slot}} · {{p.team===0 ? 'Barcelona' : 'Athletic Club'}}</title></circle>
+              }
+              @if(r.ball; as ball){
+                <circle [attr.cx]="ball[0]*105.3" [attr.cy]="ball[1]*68" r="2.2" class="ball-halo"/>
+                <circle [attr.cx]="ball[0]*105.3" [attr.cy]="ball[1]*68" r=".85" class="ball"/>
+              }
+            }
+          </svg>
+        </div>
+        <div class="pitch-foot">
+          <span><i class="legend-dot home-dot"></i>Barcelona</span>
+          <span><i class="legend-dot away-dot"></i>Athletic</span>
+          <span [class.missing]="!row()?.ball"><i class="legend-dot ball-dot"></i>{{row()?.ball ? 'Ball' : 'Ball unavailable'}}</span>
+        </div>
+      </section>
+    </div>
+
+    <footer class="player-controls">
+      <input class="seek-bar" type="range" min="0" [max]="s.frames-1" step="1" [value]="frame()" [style.--progress]="(frame()/(s.frames-1)*100)+'%'" (input)="seek(+$any($event.target).value)" aria-label="Seek video" [attr.aria-valuetext]="time(frame())"/>
+      <div class="control-row">
+        <button class="play" (click)="togglePlay()" [attr.aria-label]="playing() ? 'Pause' : 'Play'">{{playing() ? 'Ⅱ' : '▶'}}</button>
+        <span class="time">{{time(frame())}} <span>/ {{time(s.frames-1)}}</span></span>
+        <div class="frame-search">
+          <label for="frame-search">Frame</label>
+          <input id="frame-search" type="number" min="0" [max]="s.frames-1" [(ngModel)]="frameInput" (keydown.enter)="seek(frameInput)"/>
+          <button (click)="seek(frameInput)" aria-label="Go to frame">Go</button>
+        </div>
+        <select aria-label="Playback speed" [(ngModel)]="speed" (change)="changeSpeed()">
+          <option [ngValue]="0.25">0.25×</option><option [ngValue]="0.5">0.5×</option><option [ngValue]="1">1×</option><option [ngValue]="2">2×</option>
+        </select>
+        <button class="fullscreen" (click)="toggleFullscreen(player)" aria-label="Toggle fullscreen" title="Fullscreen">⛶</button>
+      </div>
+    </footer>
+    </section>
+
+    <aside class="panel inspector" aria-label="Frame inspector">
+      <div class="panel-head"><h2>Frame inspector</h2></div>
+      <div class="inspector-body">
+
+        <div class="prediction" [attr.data-state]="label()">
+          <span [class]="'label-badge '+label()">{{label()}}</span>
+          <div>
+            <small>Possession now</small>
+            <h3>{{name(label())}}</h3>
+          </div>
+        </div>
+
+        <dl class="stats">
+          <div class="stat"><dt>Video time</dt><dd>{{time(frame())}}</dd></div>
+          <div class="stat"><dt>Possession length</dt><dd>{{((current()?.[1] ?? 0)-(current()?.[0] ?? 0))/25 | number:'1.1-1'}}<small>s</small></dd></div>
+          <div class="stat home-stat"><dt>Nearest Barcelona</dt><dd>{{row()?.nearest?.[0] == null ? '—' : (row()!.nearest[0] | number:'1.1-1')}}@if(row()?.nearest?.[0] != null){<small>m</small>}</dd></div>
+          <div class="stat away-stat"><dt>Nearest Athletic</dt><dd>{{row()?.nearest?.[1] == null ? '—' : (row()!.nearest[1] | number:'1.1-1')}}@if(row()?.nearest?.[1] != null){<small>m</small>}</dd></div>
+        </dl>
+      </div>
+    </aside>
+  </section>
+  } @else {<div class="loading">Loading match…</div>}
+</main>

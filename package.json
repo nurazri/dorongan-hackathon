@@ -1,0 +1,22 @@
+{
+  "name": "possession-lab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local Angular and Python football possession analysis workspace",
+  "scripts": {
+    "prestart": "npm run build",
+    "start": "node scripts/start.mjs",
+    "build": "npm --prefix ui run build",
+    "rebuild-data": "node scripts/start.mjs --rebuild",
+    "test": "node scripts/start.mjs --test",
+    "benchmark": "node scripts/start.mjs --benchmark",
+    "external:manifest": "node scripts/start.mjs --external-manifest",
+    "external:fetch": "node scripts/start.mjs --external-fetch",
+    "external:prepare": "node scripts/start.mjs --external-prepare",
+    "external:train": "node scripts/start.mjs --external-train",
+    "external:evaluate": "node scripts/start.mjs --external-evaluate",
+    "external:gapfill": "node scripts/start.mjs --external-gapfill",
+    "external:tune": "node scripts/start.mjs --external-tune",
+    "external:validate": "node scripts/start.mjs --external-validate"
+  }
+}
